@@ -1,0 +1,6 @@
+{
+    "sketch": "Fonctionnement_AutoVSCode.ino",
+    "board": "arduino:avr:uno",
+    "output": ".\\build",
+    "port": "COM3"
+}

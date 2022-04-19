@@ -1,0 +1,37 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\variants\\standard"
+  },
+  {
+    "Sourcefile": "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\build\\sketch\\Fonctionnement_AutoVSCode.ino.cpp",
+    "Include": "LiquidCrystal.h",
+    "Includepath": "C:\\Program Files (x86)\\Arduino\\libraries\\LiquidCrystal\\src"
+  },
+  {
+    "Sourcefile": "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\build\\sketch\\Fonctionnement_AutoVSCode.ino.cpp",
+    "Include": "millisDelay.h",
+    "Includepath": "C:\\Users\\PaulNOWAK\\Documents\\Arduino\\libraries\\millisDelay"
+  },
+  {
+    "Sourcefile": "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\build\\sketch\\Fonctionnement_AutoVSCode.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Program Files (x86)\\Arduino\\libraries\\LiquidCrystal\\src\\LiquidCrystal.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\PaulNOWAK\\Documents\\Arduino\\libraries\\millisDelay\\millisDelay.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]
