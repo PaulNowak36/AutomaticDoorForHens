@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#line 1 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino"
+#line 1 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino"
 //moteur + relais + LCD + cellule + capteurs
 
 //Modif: Travaux avec VSCode + création fichier Github
@@ -54,8 +54,8 @@ unsigned long temps_mesures = 0;
 unsigned long temps_serie = 0;
 unsigned long temps_actuel;
 
-unsigned long Temporisation_SOIR = 10000;//temporisation du SOIR avant fermeture
-unsigned long Temporisation_MATIN = 10000;//temporisation du MATIN avant fermeture
+unsigned long Temporisation_SOIR = 8000;//temporisation du SOIR avant fermeture
+unsigned long Temporisation_MATIN = 8000;//temporisation du MATIN avant ouverture
 
 boolean JourVrai;   // indique si c'est le jour ou la nuit
 boolean PorteOuverte = false; // indique si la porte est en position ouverte ou non
@@ -66,39 +66,39 @@ boolean AUTO_Ouverture = false; //indique si l'ouverture automatique test manuel
 
 int backLight = 10;
 
-#line 67 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino"
+#line 67 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino"
 void setup();
-#line 90 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino"
+#line 90 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino"
 void loop();
-#line 107 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino"
+#line 107 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino"
 void task_mesure_tensions();
-#line 159 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino"
+#line 159 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino"
 void Affichage_serie();
-#line 185 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino"
+#line 185 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino"
 void AppuiBouton();
-#line 200 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino"
+#line 200 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino"
 void QuelJour();
-#line 212 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino"
+#line 212 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino"
 void FermerMoteur();
-#line 217 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino"
+#line 217 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino"
 void ArretMoteur();
-#line 222 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino"
+#line 222 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino"
 void OuvrirMoteur();
-#line 229 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino"
+#line 229 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino"
 void Activation_capteurBAS();
-#line 245 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino"
+#line 245 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino"
 void Activation_capteurHAUT();
-#line 264 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino"
+#line 264 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino"
 void AutoFermerMoteur();
-#line 275 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino"
+#line 275 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino"
 void AutoOuvrirMoteur();
-#line 285 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino"
+#line 285 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino"
 void Activation_delais();
-#line 349 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino"
+#line 349 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino"
 void task_fonctionnement_manuel();
-#line 428 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino"
+#line 428 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino"
 int read_LCD_buttons();
-#line 67 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino"
+#line 67 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino"
 void setup()
 {
   // On met les pin de chaque relais en sortie

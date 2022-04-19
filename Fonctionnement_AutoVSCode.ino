@@ -52,8 +52,8 @@ unsigned long temps_mesures = 0;
 unsigned long temps_serie = 0;
 unsigned long temps_actuel;
 
-unsigned long Temporisation_SOIR = 10000;//temporisation du SOIR avant fermeture
-unsigned long Temporisation_MATIN = 10000;//temporisation du MATIN avant fermeture
+unsigned long Temporisation_SOIR = 8000;//temporisation du SOIR avant fermeture
+unsigned long Temporisation_MATIN = 8000;//temporisation du MATIN avant ouverture
 
 boolean JourVrai;   // indique si c'est le jour ou la nuit
 boolean PorteOuverte = false; // indique si la porte est en position ouverte ou non

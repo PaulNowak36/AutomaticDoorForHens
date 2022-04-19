@@ -1,10 +1,10 @@
-# 1 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino"
+# 1 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino"
 //moteur + relais + LCD + cellule + capteurs
 
 //Modif: Travaux avec VSCode + création fichier Github
 
-# 6 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino" 2
-# 7 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino" 2
+# 6 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino" 2
+# 7 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino" 2
 
 // Création de l'objet lcd (avec les différents ports numériques qu'il utilise)
 LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
@@ -22,7 +22,7 @@ float TensionCelluleSolaire = 0;
 float TensionMoteur = 0;
 
 //constantes
-# 46 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\Fonctionnement_AutoVSCode.ino"
+# 46 "c:\\Users\\PaulNOWAK\\Desktop\\Automatic door for hens\\Stage Eurl TOULET\\Mission\\Programmes\\Programme principal\\Fonctionnement_AutoVSCode\\AutomaticDoorForHens\\Fonctionnement_AutoVSCode.ino"
 int Etat_fonctionnement_manuel = 0;//Indique l'état du programme de test manuel
 int Etat_fermeture_auto = 0;//Indique l'état du programme de fermeture automatique
 int Etat_ouverture_auto = 0;//Indique l'état du programme d'ouverture automatique
@@ -32,8 +32,8 @@ unsigned long temps_mesures = 0;
 unsigned long temps_serie = 0;
 unsigned long temps_actuel;
 
-unsigned long Temporisation_SOIR = 10000;//temporisation du SOIR avant fermeture
-unsigned long Temporisation_MATIN = 10000;//temporisation du MATIN avant fermeture
+unsigned long Temporisation_SOIR = 8000;//temporisation du SOIR avant fermeture
+unsigned long Temporisation_MATIN = 8000;//temporisation du MATIN avant ouverture
 
 boolean JourVrai; // indique si c'est le jour ou la nuit
 boolean PorteOuverte = false; // indique si la porte est en position ouverte ou non
